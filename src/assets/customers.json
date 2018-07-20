@@ -1,0 +1,14 @@
+{
+  "header": {
+    "length": 34,
+    "meta": {
+      "version": "1.2",
+      "apiVersion": "v2"
+    }
+  },
+  "data": [
+    {"name": "Janis", "age": 45},
+    {"name": "Mark", "age": 32},
+    {"name": "David", "age": 17}
+  ]
+}

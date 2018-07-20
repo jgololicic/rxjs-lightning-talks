@@ -1,4 +1,11 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CustomersService} from './customers.service';
+import {Observable} from 'rxjs';
+
+/**
+ * Use operators - pluck
+ * Avoid redundant state
+ */
 
 @Component({
   selector: 'app-root',
@@ -6,5 +13,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+  public customers$: Observable<any>;
+
+  constructor (public customersService: CustomersService) {
+    this.customers$ = this.customersService.getCustomers();
+  }
 }
