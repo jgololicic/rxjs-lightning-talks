@@ -1,0 +1,22 @@
+  public customers$: Observable<any>;
+  @ViewChild('refreshBtn') btn;
+
+  constructor (public customersService: CustomersService) {
+  }
+
+  public ngOnInit(): void {
+    const remoteCustomers$ = this.customersService.getCustomers();
+    const buttonClick$ = fromEvent(this.btn.nativeElement, 'click');
+
+    this.customers$ = merge(
+      buttonClick$.pipe(
+        mapTo(undefined)
+      ),
+      buttonClick$.pipe(
+        switchMap(() => remoteCustomers$)
+      ),
+      remoteCustomers$
+    );
+
+    this.customers$.subscribe(console.log);
+  }

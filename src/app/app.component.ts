@@ -3,8 +3,7 @@ import {CustomersService} from './customers.service';
 import {Observable} from 'rxjs';
 
 /**
- * Use operators - pluck
- * Avoid redundant state
+ * use merge operator to create animation
  */
 
 @Component({
@@ -12,11 +11,16 @@ import {Observable} from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   public customers$: Observable<any>;
 
   constructor (public customersService: CustomersService) {
+  }
+
+  public ngOnInit(): void {
     this.customers$ = this.customersService.getCustomers();
   }
+
+
 }

@@ -1,8 +1,10 @@
 <!--<app-customer-counter></app-customer-counter>-->
-<ul>
-  <li *ngFor="let customer of (customers$ | async)">
+<ul *ngIf="(customers$ | async) as customers;">
+  <li *ngFor="let customer of customers">
     <h3>Name: {{customer.name}}</h3>
     <p>age: {{customer.age}}</p>
   </li>
 </ul>
+<br>
+
 
