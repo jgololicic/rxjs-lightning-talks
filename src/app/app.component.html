@@ -1,10 +1,13 @@
 <!--<app-customer-counter></app-customer-counter>-->
-<ul *ngIf="(customers$ | async) as customers;">
+<ul *ngIf="(customers$ | async) as customers; else showLoading">
   <li *ngFor="let customer of customers">
     <h3>Name: {{customer.name}}</h3>
     <p>age: {{customer.age}}</p>
   </li>
 </ul>
 <br>
-
+<ng-template #showLoading>
+  <span>Loading ...</span>
+</ng-template>
+<button #refreshBtn>Refresh</button>
 

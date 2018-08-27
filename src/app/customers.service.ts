@@ -23,7 +23,7 @@ export class CustomersService {
         pluck('data'),
         map(customers => shuffle(customers)),
         filter(customers => customers !== undefined),
-        delay(500)
+        delay(1000)
       );
   }
 }
