@@ -1,0 +1,26 @@
+<h2>List of all customers</h2>
+
+<div *ngIf="navigationError$ | async" style="background-color: red">
+  An Error occurred while fetching user details!
+</div>
+
+
+<div *ngIf="navigationLoading$ | async" style="background-color: green; color: white;">
+  Loading customer details
+</div>
+
+
+<ul *ngIf="customers; else loading">
+  <li *ngFor="let customer of customers">
+    <h4>{{customer.name}}</h4>
+    <p>Id: {{customer.id}}</p>
+    <p>Age: {{customer.age}}</p>
+    <a [routerLink]="['/details', customer.id]">Details</a>
+    <hr>
+  </li>
+</ul>
+
+<!-- Show loading if customers does not contain any data (not emmited yet) -->
+<ng-template #loading>
+  <p>Loading customers ...</p>
+</ng-template>

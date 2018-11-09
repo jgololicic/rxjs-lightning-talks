@@ -1,0 +1,6 @@
+<!-- SUBSCRIBE TO CUSTOMER OBSERVABLE -->
+<ng-container *ngIf="customerDetails$ | async as customer">
+  <h3>Customer details for {{customer.name}}</h3>
+  <p>Age: {{customer.age}}</p>
+  <p>ID: {{customer.id}}</p>
+</ng-container>
