@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CustomersService} from './customers.service';
+import {BankService} from './bank.service';
 import {Observable} from 'rxjs';
 
 /**
@@ -14,9 +14,14 @@ import {Observable} from 'rxjs';
 })
 export class AppComponent {
 
-  public customers$: Observable<any>;
+  public banks$: Observable<any>;
 
-  constructor (public customersService: CustomersService) {
-    this.customers$ = this.customersService.getCustomers();
+  constructor (public bankService: BankService) {
+    this.banks$ = this.bankService.getBanks();
+  }
+
+  public onLoanSelected(bank: any): void {
+    // Go to dialog
+    console.log(`${bank.name} forwarding to dialog`);
   }
 }

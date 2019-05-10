@@ -6,7 +6,7 @@ import {Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CustomersService {
+export class BankService {
 
   public customers: any[];
 
@@ -16,12 +16,12 @@ export class CustomersService {
 
   }
 
-  public getCustomers(): Observable<any> {
+  public getBanks(): Observable<any> {
     return this.httpClient
-      .get('./assets/customers.json')
+      .get('./assets/banks.json')
       .pipe(
         pluck('data'),
-        filter(customers => customers !== undefined)
+        filter(banks => banks !== undefined)
       );
   }
 }

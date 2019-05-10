@@ -7,8 +7,8 @@
     }
   },
   "data": [
-    {"name": "Janis", "age": 45},
-    {"name": "Mark", "age": 32},
-    {"name": "David", "age": 17}
+    {"name": "Stadt sparkasse", "rate": 1.8},
+    {"name": "Targo", "rate": 2.99},
+    {"name": "Santander", "rate": 5.4}
   ]
 }

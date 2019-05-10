@@ -1,8 +1,10 @@
 <!--<app-customer-counter></app-customer-counter>-->
 <ul>
-  <li *ngFor="let customer of (customers$ | async)">
-    <h3>Name: {{customer.name}}</h3>
-    <p>age: {{customer.age}}</p>
+  <li *ngFor="let bank of (banks$ | async)">
+    <h3>Name: {{bank.name}}</h3>
+    <p>Rate: {{bank.rate}}</p>
+    <button (click)="onLoanSelected(bank)">Choose loan</button>
+    <hr>
   </li>
 </ul>
 

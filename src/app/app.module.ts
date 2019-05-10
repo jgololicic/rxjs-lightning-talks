@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
-import {CustomersService} from './customers.service';
+import {BankService} from './bank.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import {CustomersService} from './customers.service';
     HttpClientModule
   ],
   providers: [
-    CustomersService
+    BankService
   ],
   bootstrap: [AppComponent]
 })
