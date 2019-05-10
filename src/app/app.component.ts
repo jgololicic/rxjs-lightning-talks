@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {BankService} from './bank.service';
 import {Observable} from 'rxjs';
+import {GrayLog} from './graylog.decorator';
 
 /**
  * Use operators - pluck
@@ -20,6 +21,7 @@ export class AppComponent {
     this.banks$ = this.bankService.getBanks();
   }
 
+  @GrayLog('conversion')
   public onLoanSelected(bank: any): void {
     // Go to dialog
     console.log(`${bank.name} forwarding to dialog`);
